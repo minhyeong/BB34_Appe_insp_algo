@@ -1,11 +1,15 @@
 #ifndef __BB34_Appe_insp_algo__
 #define __BB34_Appe_insp_algo__
 
-#include <iostream>
-#include <fstream>
-
-#include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/types_c.h>
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+
+#include <iostream>
+#include <vector>
+#include <fstream>
 
 class BB34_Appe_insp_algo {
 
@@ -14,7 +18,7 @@ public:
 	BB34_Appe_insp_algo(int); // コンストラクタ
 
 	void input_csv(); // csvファイルを取得
-	void binari(); // 二値化させて保存する
+	void labeling(); // 二値化させて保存する
 
 
 private:

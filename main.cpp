@@ -11,7 +11,7 @@ int main() {
 	BB34_Appe_insp_algo test;
 
 	test.input_csv();
-	test.binari();
+	test.labeling();
 
 	return 0;
 }

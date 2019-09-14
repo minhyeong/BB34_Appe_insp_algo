@@ -7,7 +7,7 @@ using namespace cv;
 
 
 const std::string file_number[5] = { "01","06","07","08","12" };
-std::string input_FILE = "sozai/input/alcon" + file_number[0] + "/input.csv";
+std::string input_FILE = "sozai/input/alcon" + file_number[4] + "/input.csv";
 
 
 // コンストラクタ
@@ -54,24 +54,28 @@ void BB34_Appe_insp_algo::input_img_name_set(std::string data_name, int z_num) {
 }
 
 // 二値化
-void BB34_Appe_insp_algo::binari() {
+void BB34_Appe_insp_algo::labeling() {
 	// 画像インポート
 
-	int width = atoi(data[2].c_str());
-	int height = atoi(data[3].c_str());
+	//int width = atoi(data[2].c_str());
+	//int height = atoi(data[3].c_str());
+
 
 	for (auto v : img_name) {
-		Mat gray_img = imread(v, IMREAD_GRAYSCALE);
-		Mat bin_img;
+
+		// グレースケール
+		Mat input_img = imread(v, IMREAD_GRAYSCALE);
+		Mat out_img;
+			
 
 		if (THRESHOLD == 0)
-			threshold(gray_img, bin_img, THRESHOLD, 255, THRESH_BINARY | THRESH_OTSU);
+			threshold(input_img, out_img, THRESHOLD, 255, THRESH_BINARY | THRESH_OTSU);
 		else 
-			threshold(gray_img, bin_img, THRESHOLD, 255, THRESH_BINARY);
+			threshold(input_img, out_img, THRESHOLD, 255, THRESH_BINARY);
+
 
 		std::string str = replace_input_label(v);
-		imwrite(str, bin_img); // 保存
-
+		imwrite(str, out_img); // 保存
 	}
 
 	std::cout << "Finished." << std::endl;
