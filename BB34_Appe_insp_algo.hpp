@@ -23,7 +23,7 @@ private:
 	std::vector<std::string> img_name;
 
 	void input_img_name_set(std::string, int); // ファイル名を取得
-	std::string str_replace_io(std::string); // 保存ようのファイル名の文字列置換
+	std::string replace_input_label(std::string); // 保存ようのファイル名の文字列置換
 };
 
 #endif // __BB34_Appe_insp_algo__

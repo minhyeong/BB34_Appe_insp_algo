@@ -69,7 +69,7 @@ void BB34_Appe_insp_algo::binari() {
 		else 
 			threshold(gray_img, bin_img, THRESHOLD, 255, THRESH_BINARY);
 
-		std::string str = str_replace_il(v);
+		std::string str = replace_input_label(v);
 		imwrite(str, bin_img); // •Û‘¶
 
 	}
@@ -79,7 +79,7 @@ void BB34_Appe_insp_algo::binari() {
 }
 
 // •¶Žš—ñ’uŠ· input -> output
-std::string BB34_Appe_insp_algo::str_replace_il(std::string str) {
+std::string BB34_Appe_insp_algo::replace_input_label(std::string str) {
 	std::string target = "input";
 	std::string replacement = "label";
 	if (!target.empty()) {
